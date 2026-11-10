@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Agendamentos - Salão da Luh</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header class="topo">
+
+    <h1>Salão de Beleza da Luh</h1>
+
+    <p>Agendamentos realizados</p>
+
+</header>
+
+<main class="container">
+
+    <section class="cartao">
+
+        <h2>Lista de agendamentos</h2>
+
+        {% with mensagens = get_flashed_messages() %}
+
+            {% for mensagem in mensagens %}
+
+                <div class="mensagem">
+                    {{ mensagem }}
+                </div>
+
+            {% endfor %}
+
+        {% endwith %}
+
+        {% for item in registros %}
+
+            <div class="mensagem">
+
+                <strong>Cliente:</strong>
+                {{ item['cliente'] }}<br>
+
+                <strong>Telefone:</strong>
+                {{ item['telefone'] }}<br>
+
+                <strong>Data:</strong>
+                {{ item['data'] }}<br>
+
+                <strong>Horário:</strong>
+                {{ item['horario'] }}<br>
+
+                <strong>Serviço:</strong>
+                {{ item['servico'] }}
+
+                <form
+                    action="{{ url_for('excluir', id=item['id']) }}"
+                    method="POST">
+
+                    <button class="botao" type="submit">
+                        Excluir agendamento
+                    </button>
+
+                </form>
+
+            </div>
+
+        {% else %}
+
+            <p>Nenhum agendamento cadastrado.</p>
+
+        {% endfor %}
+
+        <a href="{{ url_for('inicio') }}"
+           class="link-agendamentos">
+
+            Voltar ao início
+
+        </a>
+
+    </section>
+
+</main>
+
+</body>
+</html>

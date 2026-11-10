@@ -1,0 +1,256 @@
+/* =====================================
+   SALÃO DE BELEZA DA LUH
+   Tema rosa claro e rosa pink
+   ===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff0f5;
+    color: #553344;
+    min-height: 100vh;
+}
+
+/* Área principal */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 8px 30px rgba(190, 80, 130, 0.12);
+}
+
+/* Títulos */
+
+h1 {
+    text-align: center;
+    color: #d63384;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #c21870;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+/* Textos */
+
+p {
+    color: #765568;
+    line-height: 1.7;
+}
+
+/* Formulários */
+
+form {
+    margin-top: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #9c2866;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px solid #f2bfd5;
+    border-radius: 12px;
+    background: #fff8fb;
+    color: #553344;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #e83e8c;
+    box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.12);
+}
+
+/* Botões */
+
+button,
+.btn {
+    display: inline-block;
+    background: #e83e8c;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+    background: #c21870;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(194, 24, 112, 0.2);
+}
+
+/* Links */
+
+a {
+    color: #d63384;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #a31560;
+}
+
+/* Tabelas */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th {
+    background: #e83e8c;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid #f8d8e6;
+}
+
+tr:hover {
+    background: #fff0f5;
+}
+
+/* Cartões */
+
+.card {
+    background: #fff8fb;
+    border: 1px solid #f7d4e3;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(190, 80, 130, 0.08);
+}
+
+/* Mensagens */
+
+.alert {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    background: #ffe0ed;
+    color: #a31560;
+}
+
+/* Cabeçalho */
+
+header {
+    background: #ffffff;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(190, 80, 130, 0.08);
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* Menu */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+nav a {
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: #fff0f5;
+    color: #c21870;
+}
+
+nav a:hover {
+    background: #e83e8c;
+    color: white;
+}
+
+/* Rodapé */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #a87991;
+    margin-top: 40px;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    .container {
+        width: 94%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button,
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salão de Beleza da Luh</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="topo">
+
+    <div class="logo">✂</div>
+
+    <h1>Salão de Beleza da Luh</h1>
+
+    <p>Beleza, cuidado e autoestima em cada detalhe</p>
+
+</header>
+
+<main class="container">
+
+    <section class="cartao">
+
+        <h2>Agende seu horário</h2>
+
+        <p class="subtitulo">
+            Será um prazer cuidar de você!
+        </p>
+
+        {% with mensagens = get_flashed_messages() %}
+            {% for mensagem in mensagens %}
+                <div class="mensagem">
+                    {{ mensagem }}
+                </div>
+            {% endfor %}
+        {% endwith %}
+
+        <form action="{{ url_for('agendar') }}" method="POST">
+
+            <label for="cliente">Nome completo</label>
+
+            <input
+                type="text"
+                id="cliente"
+                name="cliente"
+                placeholder="Digite seu nome"
+                required
+            >
+
+            <label for="telefone">Telefone</label>
+
+            <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(00) 00000-0000"
+                required
+            >
+
+            <label for="data">Data do agendamento</label>
+
+            <input
+                type="date"
+                id="data"
+                name="data"
+                required
+            >
+
+            <label for="horario">Horário</label>
+
+            <input
+                type="time"
+                id="horario"
+                name="horario"
+                required
+            >
+
+            <label for="servico">Serviço desejado</label>
+
+            <select id="servico" name="servico" required>
+
+                <option value="">Selecione um serviço</option>
+
+                <option value="Corte de cabelo">
+                    Corte de cabelo
+                </option>
+
+                <option value="Escova">
+                    Escova
+                </option>
+
+                <option value="Coloração">
+                    Coloração
+                </option>
+
+                <option value="Manicure">
+                    Manicure
+                </option>
+
+                <option value="Pedicure">
+                    Pedicure
+                </option>
+
+                <option value="Hidratação">
+                    Hidratação
+                </option>
+
+            </select>
+
+            <button type="submit" class="botao">
+                CONFIRMAR AGENDAMENTO
+            </button>
+
+        </form>
+
+        <a href="{{ url_for('agendamentos') }}"
+           class="link-agendamentos">
+
+            Consultar agendamentos
+
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+
+    Salão de Beleza da Luh © 2026
+
+</footer>
+
+</body>
+</html>
